@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task gma3y</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            transition: background-color 0.5s;
+        }
+
+        .btn-custom {
+            background: linear-gradient(to right, #a0eaff, #d8a8ff);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 30px;
+            margin: 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #extra-buttons {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <h3>👇🏻Click here</h3>
+
+    <button id="main-btn" class="btn btn-custom">Show buttons</button>
+    
+
+    <div id="extra-buttons">
+        <button class="btn btn-custom" onclick="changeBackground('#ffcccc')">Pink color</button>
+        <button class="btn btn-custom" onclick="changeBackground('#ccffcc')">Green color</button>
+        <button class="btn btn-custom" onclick="changeBackground('#ccccff')">blue color</button>
+    </div>
+
+  
+    <p id="output" class="mt-3"></p>
+
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+    <script>
+        
+        document.getElementById("main-btn").addEventListener("click", function() {
+            const extraButtons = document.getElementById("extra-buttons");
+            if (extraButtons.style.display === "none") {
+                extraButtons.style.display = "block";
+                this.textContent = "Hide buttons";
+            } else {
+                extraButtons.style.display = "none";
+                this.textContent = "Show buttons";
+            }
+        });
+
+    
+        function changeBackground(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
